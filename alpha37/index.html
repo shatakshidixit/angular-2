@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular2 playground</title>
+</head>
+
+<body>
+    <hello></hello>
+</body> 
+
+<!-- ES6-related imports -->
+<script src="http://cdn.rawgit.com/google/traceur-compiler/90da568c7aa8e53ea362db1fc211fbb4f65b5e94/bin/traceur-runtime.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.js"></script>
+ 
+<script>
+    //configure system loader
+    System.config({
+        //defaultJSExtensions: true,
+        transpiler: 'typescript',
+        typescriptOptions: {
+          emitDecoratorMetadata: true
+        },
+        map: {
+          typescript: 'https://cdn.rawgit.com/robwormald/9883afae87bffa2f4e00/raw/8bca570a696c47a4f8dd03a52c98734676e94cea/typescript.js',
+        }
+    });
+</script>
+<!-- Angular2 import -->
+<script src="http://code.angularjs.org/2.0.0-alpha.37/angular2.min.js"></script>
+<script src="https://code.angularjs.org/2.0.0-alpha.37/http.js"></script>
+<!--<script src="node_modules/angular2/router.js"></script>-->
+<script src="canvasjs.min.js"></script>
+
+
+<script>
+    //bootstrap the Angular2 application
+    System.import('./appContainer.ts').catch(console.log.bind(console));
+</script>
+
+</html>
